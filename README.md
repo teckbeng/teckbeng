@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @teckbeng
 - 👀 I’m interested in all kinds of gadgets
-- 🌱 I’m currently learning about DevOps
-- 💞️ I’m looking to collaborate on IoT
+- 🌱 I’m currently learning about DevOps & Security
+- 💞️ I’m looking to collaborate on IoT & Security
 - 📫 How to reach me ... 9220 6789 0971 2191
 
 <!---
