@@ -1,0 +1,12 @@
+StrictHostKeyChecking=no
+CheckHostIP=no
+UserKnownHostsFile=/dev/null
+GSSAPIDelegateCredentials=yes
+
+# SSH over Session Manager
+# # #host i-0e5c2fa8c7dda3600
+host i-*
+  ServerAliveInterval 240
+#  IdentityFile ~/.ssh/LoftwareCustomerAdminSFL.pem
+  user ec2-user
+  ProxyCommand sh -c "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"

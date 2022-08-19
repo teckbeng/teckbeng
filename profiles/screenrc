@@ -1,0 +1,36 @@
+# .screenrc
+# Bind F11 and F12 (NOT F1 and F2) to previous and next screen window
+bindkey -k F1 prev
+bindkey -k F2 next
+
+# http://stackoverflow.com/questions/359109/using-the-scrollwheel-in-gnu-screen
+termcapinfo xterm* ti@:te@
+termcapinfo xterm*|Eterm|mlterm "hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007"
+
+# scroll
+termcapinfo gnome-terminal*|xterm* ti@:te@
+termcapinfo gnome-terminal*|xterm*|Eterm|mlterm "hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007"
+
+#hardstatus alwayslastline
+#hardstatus string "%-w%{= BW}%50>%n %t%{-}%+w%<"
+caption always '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+
+# Window numbering starts at 1, not 0.
+bind c screen 1
+bind 0 select 10
+bind ^c screen 1
+screen 1
+
+# Log new screen windows in utmp.
+#deflogin on
+# Never, ever turn this off.
+autodetach on
+
+# From Stephen Shirley
+# Don't block command output if the terminal stops responding
+# (like if the ssh connection times out for example).
+nonblock on
+startup_message off
+defscrollback 9999
+
+shell -$SHELL
